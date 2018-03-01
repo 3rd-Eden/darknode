@@ -1,0 +1,33 @@
+{
+  "name": "darknode",
+  "version": "0.0.0",
+  "description": "HTTP/Docker interface for Darkweb/yolo",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3rd-Eden/darknode.git"
+  },
+  "keywords": [
+    "darknet",
+    "yolo",
+    "computer",
+    "vision",
+    "http",
+    "server",
+    "dark",
+    "node",
+    "darknode",
+    "yolo9000",
+    "yolo-tiny",
+    "tiny"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3rd-Eden/darknode/issues"
+  },
+  "homepage": "https://github.com/3rd-Eden/darknode#readme"
+}
