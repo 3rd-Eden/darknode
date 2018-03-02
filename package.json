@@ -4,7 +4,7 @@
   "description": "HTTP/Docker interface for Darkweb/yolo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -36,12 +36,14 @@
   },
   "dependencies": {
     "@moovel/yolo": "^0.2.0",
+    "async": "^2.6.0",
     "basic-auth": "^2.0.0",
     "connected": "0.0.2",
     "diagnostics": "^1.1.0",
     "eventsource": "^1.0.5",
     "gjallarhorn": "^1.3.0",
     "millisecond": "^0.1.2",
+    "mkdirp": "^0.5.1",
     "nconf": "^0.10.0",
     "request": "^2.83.0",
     "rimraf": "^2.6.2",
