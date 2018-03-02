@@ -1,7 +1,7 @@
 const EventSource = require('serversentevent');
 const Gjallarhorn = require('gjallarhorn');
 const { fork } = require('child_process');
-const ETMP = require('./expired-tmp');
+const Expired = require('./expired-tmp');
 const request = require('request');
 const logger = require('./logger');
 const config = require('./config');
@@ -40,7 +40,7 @@ ghorn.reload(function factory(payload) {
 // Setup our expirable directory structure. This will be used to store the
 // assets we're downloading, creating, recording.
 //
-const tmp = new TMP({
+const tmp = new Expired({
   duration: config.get('expiree'),
   root: config.get('root')
 });
@@ -63,7 +63,7 @@ function download(uri, fn) {
     .once('end', function () {
       fn(null, dest);
     })
-    .pipe(fs.createWriteStream();
+    .pipe(fs.createWriteStream());
   });
 }
 

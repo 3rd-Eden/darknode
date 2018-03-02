@@ -19,9 +19,9 @@ const fs = require('fs');
  */
 class Expired {
   constructor(options) {
-    this.root = options.root || require('os').tmpDir;
+    this.root = options.root || require('os').tmpdir();
     this.duration = ms(options.duration);
-    this.timers = new TickTick(this);
+    this.timers = new TickTock(this);
 
     this.initialize();
   }
@@ -130,7 +130,7 @@ class Expired {
         this.remove(directory);
       }, this.duration);
 
-      fn(null, directory):
+      fn(null, directory);
     });
   }
 
@@ -143,3 +143,8 @@ class Expired {
     this.timers.end();
   }
 }
+
+//
+// Export the module
+//
+module.exports = Expired;
