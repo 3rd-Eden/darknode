@@ -4,7 +4,7 @@
   "description": "HTTP/Docker interface for Darkweb/yolo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "nyc --reporter=text --reporter=json-summary mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,8 @@
   "homepage": "https://github.com/3rd-Eden/darknode#readme",
   "devDependencies": {
     "assume": "^1.5.2",
-    "mocha": "^5.0.1"
+    "mocha": "^5.0.1",
+    "nyc": "^11.4.1"
   },
   "dependencies": {
     "@moovel/yolo": "^0.2.0",
