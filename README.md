@@ -40,7 +40,7 @@ npm install --save darknode
   // default. User and pass must match this value in order to be processed.
   //
   "name": "secret-username",
-  "password": "secret-password",
+  "pass": "secret-password",
 
   //
   // Timeout, how long do we allow the darknet process to run before we consider
