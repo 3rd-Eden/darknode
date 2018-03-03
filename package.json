@@ -4,7 +4,8 @@
   "description": "HTTP/Docker interface for Darkweb/yolo",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=text --reporter=json-summary mocha test/*.test.js"
+    "test": "nyc --reporter=text --reporter=json-summary mocha test/*.test.js",
+    "install": "node install.js"
   },
   "repository": {
     "type": "git",
