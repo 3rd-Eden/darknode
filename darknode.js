@@ -120,11 +120,18 @@ class DarkNode extends EventEmitter {
     *
     * @param {Buffer} modified Modified frame with detections added.
     * @param {Buffer} original Original frame used for detection.
-    * @param {Object} detections Found objects.
+    * @param {Array} detections Found objects.
     * @param {Object} dimensions Size of the video.
     */
     return (modified, original, detections, dimensions) => {
-      this.emit('data', detections);
+      //
+      // For the purpose of this application, we only care about things that
+      // are actually detected. We don't really care that much about empty
+      // frames.
+      //
+      if (detections && detections.length) {
+        this.emit('data', detections, dimensions);
+      }
 
       if (!this.record) return;
 
