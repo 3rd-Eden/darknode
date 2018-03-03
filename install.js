@@ -30,7 +30,10 @@ function download(fn) {
     //
     // Files are quite large, so we're going to skip if it already exists.
     //
-    if (fs.existsSync(file)) return next();
+    if (fs.existsSync(file)) {
+      console.log('File already exists on disk, skipping, ', name);
+      return next();
+    }
 
     request(url)
     .once('error', function (err) { next(err); })
