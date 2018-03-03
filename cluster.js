@@ -63,7 +63,7 @@ function download(uri, fn) {
     .once('end', function () {
       fn(null, dest);
     })
-    .pipe(fs.createWriteStream());
+    .pipe(fs.createWriteStream(dest));
   });
 }
 
@@ -105,7 +105,7 @@ module.exports = function darknode(options) {
           name: 'error',
           data: err.message
         }));
-        
+
         return res.end();
       }
 
