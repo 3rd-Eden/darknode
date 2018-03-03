@@ -3,3 +3,7 @@ package-lock.json
 .nyc_output
 coverage
 config.json
+cfg/tiny-yolo-voc.cfg
+cfg/tiny-yolo-voc.weights
+cfg/yolo.weights
+.DS_Store

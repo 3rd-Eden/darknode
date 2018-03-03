@@ -35,7 +35,7 @@ class DarkNode extends EventEmitter {
    * @private
    */
   weights(options) {
-    return options.tiny ? './cfg/tiny.weights' : './cfg/yolo.weights';
+    return options.tiny ? './cfg/tiny-yolo-voc.weights' : './cfg/yolo.weights';
   }
 
   /**

@@ -19,9 +19,9 @@ const destination = path.join(__dirname, 'cfg');
  */
 function download(fn) {
   async.each([
+    'https://github.com/pjreddie/darknet/raw/master/cfg/tiny-yolo-voc.cfg',
     'https://pjreddie.com/media/files/tiny-yolo-voc.weights',
-    'https://pjreddie.com/media/files/yolo.weights',
-    'https://github.com/pjreddie/darknet/raw/master/cfg/tiny-yolo-voc.cfg'
+    'https://pjreddie.com/media/files/yolo.weights'
   ], function downloadWeights(url, next) {
     const name = path.basename(url);
     const file = path.join(destination, name);
