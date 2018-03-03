@@ -1,4 +1,5 @@
 const EventSource = require('eventsource');
+const EventEmitter = require('events');
 const request = require('request');
 const URL = require('url-parse');
 
@@ -48,7 +49,19 @@ class Client {
     const server = this.server(options);
     server.set('pathname', '/stream');
 
-    return new EventSource(server.href);
+    const stream = new EventSource(server.href);
+    const events = new EventEmitter();
+
+    stream.onerror = function onerror(err) {
+      events.emit('error', err);
+    };
+
+    stream.onmessage = function onmessage(event) {
+      const { name, data } = JSON.parse(event.data);
+      events.emit(name, data);
+    };
+
+    return events;
   }
 
   /**

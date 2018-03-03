@@ -198,7 +198,7 @@ class Expired extends EventEmitter {
    * @private
    */
   end() {
-    debug('shutting down instance.')
+    debug('shutting down instance.');
     this.timers.end();
   }
 }

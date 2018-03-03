@@ -101,7 +101,11 @@ module.exports = function darknode(options) {
   function failure(err) {
     if (err) {
       if (stream) {
-        stream.write('error:' + err.message);
+        stream.write(JSON.stringify({
+          name: 'error',
+          data: err.message
+        }));
+        
         return res.end();
       }
 
@@ -139,7 +143,10 @@ module.exports = function darknode(options) {
       message: function message(data) {
         if (!stream) return messages.push(data);
 
-        stream.write(JSON.stringify(data));
+        stream.write(JSON.stringify({
+          name: 'detection',
+          data
+        }));
       }
     }, function done(errs) {
       if (errs) return failure(errs);
